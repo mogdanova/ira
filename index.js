@@ -69,13 +69,6 @@ function sqr(){
   result.value = Math.pow(a, 2);
 }
 
-// function fact() {
-//   var num1 = document.getElementById('num1').value;
-//   var a = Number(num1);
-//   var result = document.getElementById("result");
-//   result.value = (a != 1) ? a * fact(a - 1) : 1;
-// }
-
 function factorial(n) {
   return n ? n * factorial(n - 1) : 1;
 }
@@ -122,10 +115,16 @@ function ctg(){
   result.value = Math.atan(a); 
 }
 
-// a.keyup = function(e){
-//   this.value = this.value.replace(/[^0-9\.]/g, '');
-// };
-
-// b.keyup = function(e){
-//   this.value = this.value.replace(/[^0-9\.]/g, '');
-// };
+function allow_enter(){
+  var num1 = document.getElementById('num1').value;
+  var num2 = document.getElementById("num2").value;
+  var a = Number(num1);
+  var b = Number(num2);
+  a.keyup = function(){
+    this.value = this.value.replace(/[^0-9\.]/g, '');
+  };
+  
+  b.keyup = function(){
+    this.value = this.value.replace(/[^0-9\.]/g, '');
+  };
+}
