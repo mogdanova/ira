@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1><center>Functions, variables</center></h1>
+    <div class="main">
+      <div>
+        <p>a   <input type="number" id="num1" pattern="[0-9]{100}" onchange="a = this.value" value="-7.6"></p>
+        <p>b   <input type="number" id="num2" pattern="[0-9]{100}" onchange="a = this.value" value="2.5"></p>
+      </div>
+      <div>
+        <button onclick="sum()">a+b</button>
+        <button onclick="sub()">a-b</button>
+        <button onclick="mul()">a*b</button>
+        <button onclick="percent()">%</button>
+        <button onclick="div()">a/b</button>
+        <button onclick="intdiv()">a/b(int)</button>
+        <button onclick="abs()">|a|</button> <br><br>
+        <button onclick="sqr()">a^2</button>
+        <button onclick="fact()">a!</button>
+        <button onclick="round()">Округление</button>
+        <button onclick="sin()">sin</button>
+        <button onclick="cos()">cos</button>
+        <button onclick="tg()">tg</button>
+        <button onclick="ctg()">ctg</button>
+      </div>
+      <hr>
+      <p>Результат   <input type="number" id="result"></textarea></p>
+    </div>
+  </body>
+  </html>
