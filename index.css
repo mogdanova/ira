@@ -1,5 +1,10 @@
+body {
+  background: rgba(0, 255, 255, 0.774);
+}
+
 .main {
   width: 90%;
+  background: rgba(0, 0, 0, 0.164);
   height: 600px;
   border: 4px double green;
   margin-left: 5%;
