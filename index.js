@@ -1,11 +1,3 @@
-a.keyup = function(e){
-  this.value = this.value.replace(/[^0-9\.]/g, '');
-};
-
-b.keyup = function(e){
-  this.value = this.value.replace(/[^0-9\.]/g, '');
-};
-
 function sum(){
   var num1 = document.getElementById('num1').value;
   var num2 = document.getElementById("num2").value;
@@ -39,7 +31,9 @@ function percent(){
   var a = Number(num1);
   var b = Number(num2);
   var result = document.getElementById("result");
-  result.value = (b*100)/a;
+  if(a != 0){
+    result.value = (b*100)/a;
+  } else {alert("На нуль делить НЕЛЬЗЯ!!!!!!!!!")}
 }
 
 function div(){
@@ -82,6 +76,17 @@ function sqr(){
 //   result.value = (a != 1) ? a * fact(a - 1) : 1;
 // }
 
+function factorial(n) {
+  return n ? n * factorial(n - 1) : 1;
+}
+
+function fact() {
+  var num1 = document.getElementById('num1').value; 
+  var a = Number(num1); 
+  var result = document.getElementById('result');  
+  result.value = factorial(a);
+}
+
 function round(){
   var num1 = document.getElementById('num1').value;
   var a = Number(num1);
@@ -116,3 +121,11 @@ function ctg(){
   var result = document.getElementById("result");
   result.value = Math.atan(a); 
 }
+
+// a.keyup = function(e){
+//   this.value = this.value.replace(/[^0-9\.]/g, '');
+// };
+
+// b.keyup = function(e){
+//   this.value = this.value.replace(/[^0-9\.]/g, '');
+// };
