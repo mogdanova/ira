@@ -1,12 +1,11 @@
+var result = document.getElementById('result');  
+var input = document.querySelector("input");
 var num1 = document.getElementById('num1');
 var num2 = document.getElementById("num2");
 var a = Number(num1.value);
 var b = Number(num2.value);
-var result = document.getElementById('result');  
-var input = document.querySelector("input");
-
 function sum(x, y){
-  result.value = a+b;
+  result.value = x + y;
 }
 
 function sub(x, y){
@@ -18,9 +17,11 @@ function mul(x, y){
 }
 
 function percent(x, y){
-  if(x != 0){
+  if(x > 0){
     result.value = (y*100)/x;
-  } else {alert("На нуль делить НЕЛЬЗЯ!!!!!!!!!")}
+  } else {
+      result.value = "underfined";
+  }
 }
 
 function div(x, y){
@@ -28,7 +29,8 @@ function div(x, y){
 }
 
 function intdiv(x, y){
-  result.value = parseInt(x / y);
+  result.value = (x / y);
+  result.value = result.value - (result.value%1);
 }
 
 function abs(x){
@@ -49,7 +51,7 @@ function factorial(x) {
       if(x == 1) {
         return 1;
       } else {
-          alert("Нельзя посчитать факториал отрицательного числа и числа равного нуля :(");
+        result.value = "underfined";
       }
   }
 }
@@ -59,8 +61,16 @@ function fact(x) {
   result.value = factorial(x);
 }
 
-function round(x){
-  result.value = Math.round(x); 
+function round(x, y, z){
+  y = x - (x%1);
+  z = y+1;
+  var mid = x - y;
+  if(mid >= 0.5) {
+    result.value = z;
+  } else 
+      if(mid < 0.5) {
+        result.value = y;
+      }
 }
 
 function sin(x){
@@ -79,7 +89,7 @@ function ctg(x){
   result.value = Math.atan(x); 
 }
 
-function allow_enter(x, y){
+function allow_enter(){
   input.keyup = function(){
     this.value = this.value.replace(/[^0-9\.]/g, '');
   };

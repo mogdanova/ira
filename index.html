@@ -10,8 +10,8 @@
     <h1><center>Functions, variables</center></h1>
     <div class="main">
       <div>
-        <p>a = <input type="number" id="num1" pattern="[0-9]{100}" onchange="a = this.value" value="5"></p>
-        <p>b = <input type="number" id="num2" pattern="[0-9]{100}" onchange="a = this.value" value="3"></p>
+        <p>a = <input type="number" id="num1" onchange="a = Number(this.value)"></p>
+        <p>b = <input type="number" id="num2" onchange="b= Number(this.value)"></p>
       </div>
       <div>
         <button onclick="sum(a,b)">a+b</button>
@@ -30,7 +30,7 @@
         <button onclick="ctg(a)">ctg</button>
       </div>
       <hr>
-      <p>Результат:   <input type="number" id="result"></textarea></p>
+      <p>Результат:   <input type="text" id="result"></textarea></p>
     </div>
     <script src="index.js"></script>
   </body>
