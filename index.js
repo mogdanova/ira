@@ -1,130 +1,86 @@
-function sum(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
+var num1 = document.getElementById('num1');
+var num2 = document.getElementById("num2");
+var a = Number(num1.value);
+var b = Number(num2.value);
+var result = document.getElementById('result');  
+var input = document.querySelector("input");
+
+function sum(x, y){
   result.value = a+b;
 }
 
-function sub(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
-  result.value = a-b;
+function sub(x, y){
+  result.value = x-y;
 }
 
-function mul(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
-  result.value = a*b;
+function mul(x, y){
+  result.value = x*y;
 }
 
-function percent(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
-  if(a != 0){
-    result.value = (b*100)/a;
+function percent(x, y){
+  if(x != 0){
+    result.value = (y*100)/x;
   } else {alert("На нуль делить НЕЛЬЗЯ!!!!!!!!!")}
 }
 
-function div(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
-  result.value = a/b;
+function div(x, y){
+  result.value = x/y;
 }
 
-function intdiv(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  var result = document.getElementById("result");
-  result.value = Math.trunc(a/b);
+function intdiv(x, y){
+  result.value = parseInt(x / y);
 }
 
-function abs(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.abs(a);
+function abs(x){
+  if(x < 0) {
+    result.value = (x ** 2) ** 0.5;
+  } else { result.value = x }
 }
 
 
-function sqr(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.pow(a, 2);
+function sqr(x){
+  result.value = x ** 2;
 }
 
-function factorial(n) {
-  return n ? n * factorial(n - 1) : 1;
+function factorial(x) {
+    if (x > 1){
+    return x ? x * factorial(x - 1) : 1;
+  } else {
+      if(x == 1) {
+        return 1;
+      } else {
+          alert("Нельзя посчитать факториал отрицательного числа и числа равного нуля :(");
+      }
+  }
 }
 
-function fact() {
-  var num1 = document.getElementById('num1').value; 
-  var a = Number(num1); 
+function fact(x) {
   var result = document.getElementById('result');  
-  result.value = factorial(a);
+  result.value = factorial(x);
 }
 
-function round(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.round(a); 
+function round(x){
+  result.value = Math.round(x); 
 }
 
-function sin(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.sin(a); 
+function sin(x){
+  result.value = Math.sin(x); 
 }
 
-function cos(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.cos(a); 
+function cos(x){
+  result.value = Math.cos(x); 
 }
 
-function tg(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.tan(a); 
+function tg(x){
+  result.value = Math.tan(x); 
 }
 
-function ctg(){
-  var num1 = document.getElementById('num1').value;
-  var a = Number(num1);
-  var result = document.getElementById("result");
-  result.value = Math.atan(a); 
+function ctg(x){
+  result.value = Math.atan(x); 
 }
 
-function allow_enter(){
-  var num1 = document.getElementById('num1').value;
-  var num2 = document.getElementById("num2").value;
-  var a = Number(num1);
-  var b = Number(num2);
-  a.keyup = function(){
-    this.value = this.value.replace(/[^0-9\.]/g, '');
-  };
-  
-  b.keyup = function(){
+function allow_enter(x, y){
+  input.keyup = function(){
     this.value = this.value.replace(/[^0-9\.]/g, '');
   };
 }
