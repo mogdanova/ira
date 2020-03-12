@@ -1,29 +1,58 @@
 body {
-  background: rgba(0, 255, 255, 0.774);
+  background: rgba(148, 72, 72, 0.753);
+  font-family: 'FF Trixie' ;
 }
 
-.main {
-  width: 90%;
-  background: rgba(0, 0, 0, 0.164);
-  height: 600px;
-  border: 4px double green;
-  margin-left: 5%;
-  padding: 20px;
-  font-size: 19px;
-  font-weight: bold;
+.left {
+  float: left;
+  width: 30%;
+}
+
+.right {
+  float: right;
+  width: 45%;
 }
 
 button {
-  font-size: 20px;
-  font-weight: bold;
-  width: 135px;
-}
-
-#num1, #num2 {
-  width: 70px;
-  height: 25px;
-}
-
-input {
   font-size: 18px;
+  font-weight: bold;
+  margin-top: 5%;
+  height: 50px;
+  width: 200px;
+}
+
+#input {
+  font-size: 18px;
+  margin-top: 42%;
+  margin-left: 15%;
+  height: 50px;
+  width: 500px;
+}
+
+#output {
+  font-size: 18px;
+  margin-top: 50px;
+  margin-left: 15%;
+  height: 50px;
+  width: 500px;
+}
+
+#trash {
+  vertical-align: bottom;
+  height: 55px;
+}
+
+.clear {
+  width: 70px;
+  height: 58px;
+  vertical-align: bottom;
+  position: static;
+}
+
+#check {
+  width: 90px;
+  font-size: 20px;
+  height: 50px;
+  margin-top: 21%;
+  margin-left: 55%;
 }
