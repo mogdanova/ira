@@ -125,24 +125,7 @@ function isPhone(s,t) {
   return t;
 }
 
-function isEmail(s,t){
-  t = '';
-  var c1 = new RegExp("@mail.com ");
-  var c2 = new RegExp("@gmail.com ");
-  var c3 = new RegExp("@mail.ru ");
-  var c4 = new RegExp("@gmail.ru ");
-  var t1 = c1.exec(s);
-  var t2 = c2.exec(s);
-  var t3 = c3.exec(s);
-  var t4 = c4.exec(s);
-  if((t1!=null) || (t2!=null) || (t3!=null) || (t4!=null)) {
-    t = true;
-  }
-  else  {
-    t = false;
-    alert("Enter correct email");
-  }
-  console.log(t);
-  console.log(s);
-  return t;
+function isEmail(s){
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(s).toLowerCase());
 }
