@@ -86,46 +86,17 @@ function isSnakeCase(s,t){
   return t;
 }
 
-function isNan(s,t){
-  t = '';
-  d = '0123456789';
-  var k = 0;
-  for(var i = 0; i < s.length; i++){
-    if(d.search(s[i]) == -1){
-      k++;
-    }
-  }
-  if(k == s.length){
-    t = true;
-  }
-  else 
-    t = false;
-  return t;
+function isNan(s){
+  var re = /^([^0-9]*)$/;
+  return re.test(String(s).toLowerCase());
 }
 
-function isPhone(s,t) {
- t = '';
-  var c1 = new RegExp("37544");
-  var c2 = new RegExp("37529");
-  var c3 = new RegExp("8029");
-  var c4 = new RegExp("8044");
-  var t1 = c1.exec(s);
-  var t2 = c2.exec(s);
-  var t3 = c3.exec(s);
-  var t4 = c4.exec(s);
-  if((t1!=null) || (t2!=null) || (t3!=null) || (t4!=null)) {
-    t = true;
-  }
-  else  {
-    t = false;
-    alert("Enter correct phone number");
-  }
-  console.log(t);
-  console.log(s);
-  return t;
+function isPhone(s) {
+  var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  return re.test(String(s).toLowerCase());
 }
 
 function isEmail(s){
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(s).toLowerCase());
+  return re.test(String(s).toLowerCase());
 }
